@@ -4,8 +4,8 @@ class Post extends Component{
     render(){
         return(
             <div>
-                <h3>{this.props.title}</h3>
-                <h3>{this.props.body}</h3>
+                <h3>{this.props.posts.title}</h3>
+                <h3>{this.props.posts.body}</h3>
             </div>
         )
     }
