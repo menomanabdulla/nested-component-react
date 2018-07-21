@@ -1,5 +1,6 @@
 import React,{Component} from 'react'
 import Post from './post/post'
+import Reaction from './reaction/reaction'
 import './App.css';
 class App extends Component{
   constructor (){
@@ -19,15 +20,29 @@ class App extends Component{
         body : 'This is body 4'
       }
     ]
+    this.reaction = [
+      {like: 100,comment: 50},
+      {like: 50,comment: 70},
+      {like: 60,comment: 30},
+      {like: 80,comment: 20}
+    ]
   }
   render(){
     return(
       <div>
           <h1 className="text">Hello world</h1>
-          <Post posts = {this.posts[0]} />
-          <Post posts = {this.posts[1]} />
-          <Post posts = {this.posts[2]} />
-          <Post posts = {this.posts[3]} />
+          {
+              this.posts.map(
+                (item,index)=>{
+                  return <Post key = {index}  post = {item} />
+                }
+              )
+          }
+          {
+            this.reaction.map((reactionItem,index)=>{
+              return <Reaction key = {index} reaction = { reactionItem } />
+            })
+          }
       </div>
     )
   }
