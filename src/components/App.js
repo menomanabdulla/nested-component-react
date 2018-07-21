@@ -1,6 +1,8 @@
 import React,{Component} from 'react'
 import Post from './post/post'
 import Reaction from './reaction/reaction'
+import Count from './count/count'
+import TwoWay from './two-way-databuinding/data-buinding'
 import './App.css';
 class App extends Component{
   constructor (){
@@ -31,6 +33,11 @@ class App extends Component{
     return(
       <div>
           <h1 className="text">Hello world</h1>
+
+          <Count />
+
+          <TwoWay />
+          
           {
               this.posts.map(
                 (item,index)=>{
